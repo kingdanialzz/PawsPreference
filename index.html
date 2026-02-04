@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paws & Preferences</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Floating Background Layer -->
+    <div class="cat-background"></div>
+
+    <!-- Main App -->
+    <main class="app">
+      <!-- Header -->
+      <header class="app-header mt-4">
+        <h1>Paws & Preferences 🐾</h1>
+        <p class="subtitle">
+          Swipe right if you like the kitty, left if you don't.
+        </p>
+      </header>
+
+      <!-- Swipe Section -->
+      <section id="swipe-section" class="view active">
+        <div class="card-stack mt-4" id="card-stack"></div>
+
+        <div class="swipe-indicators">
+          <span class="dislike">NOPE</span>
+          <span class="like">LIKE</span>
+        </div>
+
+        <div class="progress mt-4">
+          <span id="current-count">0</span> out of
+          <span id="total-count">10</span>
+        </div>
+      </section>
+
+      <!-- Summary Section -->
+      <section id="summary-section" class="view hidden">
+        <h2 id="summary-title">Your Favourite Kitties ❤️</h2>
+        <p id="summary-text"></p>
+        <div id="liked-gallery" class="gallery"></div>
+        <button id="restart-btn" class="restart-btn">Try Again</button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
