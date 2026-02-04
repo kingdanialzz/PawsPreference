@@ -1,4 +1,6 @@
-/* Base Reset */
+/* Main css file: style.css */
+
+/* Base Style Settings */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,7 +10,7 @@
 body {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* not center vertically */
+  align-items: flex-start; 
   background-color: #ffd4d4;
   z-index: 0;
 }
@@ -156,7 +158,6 @@ body {
 }
 
 /* Liked Cats Gallery */
-
 .gallery {
   position: relative;
   width: 100%;

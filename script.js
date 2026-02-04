@@ -1,3 +1,6 @@
+// Main JavaScript file: script.js
+
+// Initialize DOM elements
 const cardStack = document.getElementById("card-stack");
 const currentCount = document.getElementById("current-count");
 const totalCount = document.getElementById("total-count");
@@ -14,7 +17,7 @@ let cats = [];
 let currentIndex = 0;
 let likedCats = [];
 
-// Sound effects
+// Sound effects and background music
 const likeSound = new Audio("sound/cute_cat.mp3");
 const nopeSound = new Audio("sound/angry_cat.mp3");
 const bgMusic = new Audio("sound/cute_background.mp3");
@@ -89,7 +92,7 @@ function addSwipeFunctionality(card) {
   const likeIndicator = indicators.querySelector(".like");
   const dislikeIndicator = indicators.querySelector(".dislike");
 
-  // --- TOUCH EVENTS ---
+  // TOUCH EVENTS
   card.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
@@ -133,7 +136,7 @@ function addSwipeFunctionality(card) {
     handleCardRelease(card, currentX);
   });
 
-  // --- MOUSE EVENTS *FOR DESKTOP* ---
+  // MOUSE EVENTS * FOR DESKTOP * 
   card.addEventListener("mousedown", (e) => {
     startBackgroundMusic();
     startX = e.clientX;
@@ -195,7 +198,7 @@ function handleCardRelease(card, distanceX) {
     card.style.transition = "transform 0.5s ease";
     card.style.transform = `translate(${window.innerWidth}px, 0px) rotate(20deg)`;
   } else if (distanceX < -threshold) {
-    // 🔊 Play NOPE sound
+
     nopeSound.currentTime = 0;
     nopeSound.play();
 
@@ -215,7 +218,7 @@ function handleCardRelease(card, distanceX) {
     } else {
       currentCount.textContent = currentIndex + 1;
 
-      // add swipe to next top card
+      // Add swipe to next top card
       const nextCard = document.querySelector(".card");
       if (nextCard) addSwipeFunctionality(nextCard);
     }
@@ -263,11 +266,11 @@ function showSummary() {
   let imagesPerRow;
 
   if (window.innerWidth <= 480) {
-    imagesPerRow = 2; // mobile
+    imagesPerRow = 2; // Mobile usage
   } else if (window.innerWidth <= 768) {
-    imagesPerRow = 2; // small tablets
+    imagesPerRow = 2; // Tablet usage
   } else {
-    imagesPerRow = 3; // desktop
+    imagesPerRow = 3; // Desktop usage
   }
 
   const gap = 50;
@@ -305,7 +308,7 @@ function showSummary() {
     img.style.transform = `rotate(${rotations[index % rotations.length]}deg)`;
   });
 
-  // extend container height so it becomes scrollable
+  // Extend container height so it becomes scrollable
   const rows = Math.ceil(images.length / imagesPerRow);
   likedGallery.style.height = rows * sectionHeight + 40 + "px";
 
